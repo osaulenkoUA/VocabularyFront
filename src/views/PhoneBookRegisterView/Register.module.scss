@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+.bgimage {
+  margin: 0 auto;
+  width: 100%;
+  height: 14%;
+  background-image: url('../../images/eng1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media (min-width: 1024px) {
+    height: 27%;
+  }
+}
+.wrapForm {
+  position: relative;
+  width: 360px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.formTitle {
+  font-size: 30px;
+  padding-left: 20px;
+  padding-bottom: 23px;
+}
+.form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 15px;
+}
+.form__input {
+  margin: 0 auto;
+  display: block;
+  height: 48px;
+  width: 320px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d6d7d891;
+  margin-top: 10px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+.form__input:focus {
+  outline: none;
+  border: 1px solid #3861e7;
+}
+
+.form__label {
+  margin: 0 auto;
+  color: #a5a5ad;
+}
+.form__btn,
+.notActive {
+  margin: 0 auto;
+  width: 320px;
+  height: 48px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: #2f5794;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+}
+.notActive {
+  cursor: auto;
+  background-color: rgb(139, 149, 184);
+}
+
+.form__btn:focus {
+  border: none;
+  outline: none;
+}
+.form__btn:active {
+  background-color: rgb(80, 80, 80);
+}
+
+.passShow__btn {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  top: 306px;
+  right: 35px;
+}
+.passShow__btn:focus {
+  border: none;
+  outline: none;
+}
+.none {
+  display: none;
+}
+.visible {
+  display: inline;
+}

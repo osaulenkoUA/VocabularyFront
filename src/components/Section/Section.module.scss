@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  src: url('./roboto-v20-latin-regular.ttf');
+}
+
+.container {
+  margin: 0 auto;
+  font-family: 'roboto';
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 45%,
+    rgba(173, 171, 171, 1) 100%
+  );
+}
+.title {
+  width: 90%;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 52px;
+  font-weight: 500;
+  color: #2f5794;
+}
+
+.bgimage {
+  margin: 0 auto;
+  width: 100%;
+  height: 14%;
+  background-image: url('../../images/eng1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media (min-width: 768px) {
+    height: 20%;
+  }
+  @media (min-width: 1024px) {
+    height: 27%;
+  }
+}

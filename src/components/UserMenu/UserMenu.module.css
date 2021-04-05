@@ -1,0 +1,14 @@
+.title{
+    color: rgb(53, 53, 134);
+    font-size: 16px;
+    font-weight: 600;
+}
+.wrapper{
+    /* margin-right: auto; */
+    text-align: right;
+    margin-right: 20px;
+}
+
+.btn{
+    cursor: pointer;
+}

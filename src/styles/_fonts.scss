@@ -1,0 +1,306 @@
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-ThinItalic.woff2') format('woff2');
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-LightItalic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-MediumItalic.woff2') format('woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-RegularItalic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text Book';
+	src: url('../fonts/GTEestiProText-Book.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-BoldItalic.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-UltraLightItalic.woff2') format('woff2');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-Thin.woff2') format('woff2');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-UltraBold.woff2') format('woff2');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-UltraBoldItalic.woff2') format('woff2');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-UltraLight.woff2') format('woff2');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-RegularItalic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-LightItalic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-Thin.woff2') format('woff2');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-UltraLightItalic.woff2') format('woff2');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-BoldItalic.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-MediumItalic.woff2') format('woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text Book';
+	src: url('../fonts/GTEestiProText-BookItalic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('../fonts/GTEestiProText-UltraLight.woff2') format('woff2');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('../fonts/GTEestiProDisplay-ThinItalic.woff2') format('woff2');
+	font-weight: 100;
+	font-style: italic;
+}
+
+// -------------------------------------------------------------
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-ExtraBold.woff2') format('woff2');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-ExtraLight.woff2') format('woff2');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-BlackItalic.woff2') format('woff2');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-SemiBoldItalic.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-LightItalic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-MediumItalic.woff2') format('woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-ExtraLightItalic.woff2') format('woff2');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-Black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-ExtraBoldItalic.woff2') format('woff2');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-BoldItalic.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-Italic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cambon';
+	src: url('../fonts/Cambon-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
