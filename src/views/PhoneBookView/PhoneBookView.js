@@ -23,9 +23,14 @@ function PhoneBookView() {
   const isShowFindCOntact = isContacts >= 2;
   const isShowContactList = isContacts !== 0;
 
+  const foo=(data)=>{
+      console.log(data);
+      dispatch(phoneBookOperation.addContact(data));
+  }
+
   return (
     <>
-      <ContactForm />
+      <ContactForm foo={foo}   />
       <CSSTransition
         in={isShowFindCOntact}
         timeout={250}
@@ -41,3 +46,5 @@ function PhoneBookView() {
 }
 
 export default PhoneBookView;
+
+

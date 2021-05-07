@@ -14,35 +14,35 @@ import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors.js';
 import Navigation from './Navigation/Navigation.js';
 
 function App() {
-	const loading = useSelector(phoneBookSelectors.getLoading);
+  const loading = useSelector(phoneBookSelectors.getLoading);
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(authOperation.getCurrentUser());
-	}, []);
+  useEffect(() => {
+    dispatch(authOperation.getCurrentUser());
+  }, []);
 
-	return (
-		<BrowserRouter>
-			<Section>
-				{/* <Checkbox /> */}
-				{loading && <Spinner />}
+  return (
+    <BrowserRouter>
+      <Section>
+        {/* <Checkbox /> */}
+        {loading && <Spinner />}
 
-				<Suspense fallback={<h1>Loading...</h1>}>
-					<Switch>
-						{routes.map((route) =>
-							route.privat ? (
-								<PrivateRoute key={route.label} {...route} />
-							) : (
-								<PublicRoute key={route.label} {...route} />
-							)
-						)}
-					</Switch>
-				</Suspense>
-			</Section>
-			<Navigation />
-		</BrowserRouter>
-	);
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Switch>
+            {routes.map((route) =>
+              route.privat ? (
+                <PrivateRoute key={route.label} {...route} />
+              ) : (
+                <PublicRoute key={route.label} {...route} />
+              ),
+            )}
+          </Switch>
+        </Suspense>
+      </Section>
+      {/* <Navigation /> */}
+    </BrowserRouter>
+  );
 }
 
 export default App;

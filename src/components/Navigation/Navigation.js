@@ -8,22 +8,18 @@ import styles from './NavigationStyle.js';
 // import routes from '../../routes.js';
 
 const Navigation = () => {
-	const isAuth = useSelector(authSelectors.getToken);
-	return (
-		<nav className={s.list}>
-			{isAuth && (
-				<NavLink exact to="/books" style={styles.link} activeStyle={styles.activeLink}>
-					Books
-				</NavLink>
-			)}
+  const isAuth = useSelector(authSelectors.getToken);
+  return (
+    <nav className={s.list}>
+      <NavLink exact to="/books" style={styles.link} activeStyle={styles.activeLink}>
+        Add Word
+      </NavLink>
 
-			{!isAuth && (
-				<>{/* <NavLink exact to="/" style={styles.link} activeStyle={styles.activeLink}>
-						Login
-					</NavLink> */}</>
-			)}
-		</nav>
-	);
+      <NavLink exact to="/learn" style={styles.link} activeStyle={styles.activeLink}>
+        Learn
+      </NavLink>
+    </nav>
+  );
 };
 
 export default Navigation;

@@ -2,18 +2,24 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import authOperation from '../../redux/auth/authOperation';
 import authSelectors from '../../redux/auth/authSelectors';
-
-import s from './UserMenu.module.css';
+import IconLogout from '../assets/IconLogout/IconLogout';
+import s from './UserMenu.module.scss';
 function UserMenu() {
   const name = useSelector(authSelectors.getName);
   const dispatch = useDispatch();
 
   return (
     <div className={s.wrapper}>
-      <span className={s.title}>Wellcome,{name}</span>
-      <button className={s.btn} type="button" onClick={() => dispatch(authOperation.logOut())}>
-        Logout
-      </button>
+      <div className={s.content}>
+        <p className={s.title}>{`Wellcome, ${name}`}</p>
+        <button
+          className={s.btn}
+          type="button"
+          onClick={() => dispatch(authOperation.logOut())}
+        >
+          <IconLogout />
+        </button>
+      </div>
     </div>
   );
 }

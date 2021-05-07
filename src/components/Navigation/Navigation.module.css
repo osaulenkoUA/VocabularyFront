@@ -1,8 +1,7 @@
 .list {
-  padding-top: 30px;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, min-content);
+  grid-template-columns: repeat(2, max-content);
   grid-column-gap: 25px;
   text-transform: uppercase;
   justify-content: center;

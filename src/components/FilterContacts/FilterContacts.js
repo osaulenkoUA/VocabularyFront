@@ -1,19 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.js';
 import phoneBookAction from '../../redux/PhoneBook/phoneBookActions.js';
 
-import s from './FilterContacts.module.css';
+import s from './FilterContacts.module.scss';
 
-function FilterContacts({ value, onChangeFilter }) {
+function FilterContacts() {
+  const dispatch = useDispatch();
+  const value = useSelector(phoneBookSelectors.getFilter);
+
   return (
     <div className={s.findContact}>
-      <p className={s.filterTitle}>Find contacts by name</p>
+      <p className={s.filterTitle}>Find word:</p>
       <input
         type="text"
         value={value}
-        onChange={({ target }) => onChangeFilter(target.value)}
+        onChange={({ target }) =>
+          dispatch(phoneBookAction.changeFilter(target.value))
+        }
         className={s.filterInput}
         placeholder="Search..."
       />
@@ -21,14 +26,4 @@ function FilterContacts({ value, onChangeFilter }) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    value: phoneBookSelectors.getFilter(state),
-  };
-};
-
-const mapDispatchToProps = {
-  onChangeFilter: phoneBookAction.changeFilter,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(FilterContacts);
+export default FilterContacts;

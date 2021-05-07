@@ -4,7 +4,7 @@
   height: 35px;
   justify-content: center;
   display: grid;
-  grid-template-columns: 1fr max-content 30px;
+  grid-template-columns: 1fr 1fr 30px;
   grid-column-gap: 10px;
   border: 1px solid rgb(211, 211, 211);
   align-items: center;

@@ -6,13 +6,13 @@ import Navigation from '../Navigation/Navigation.js';
 import UserMenu from '../UserMenu/UserMenu.js';
 
 function Header() {
-	const isAuth = useSelector(authSelectors.getToken);
-	return (
-		<>
-			{typeof isAuth === 'string' && <UserMenu />}
-			{/* <Navigation /> */}
-		</>
-	);
+  const isAuth = useSelector(authSelectors.getToken);
+  return (
+    <>
+      {typeof isAuth === 'string' && <UserMenu />}
+      {typeof isAuth === 'string' && <Navigation />}
+    </>
+  );
 }
 
 export default Header;
