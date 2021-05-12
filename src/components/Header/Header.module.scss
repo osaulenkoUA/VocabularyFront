@@ -1,0 +1,28 @@
+.header{
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.wrapImg{
+  margin: 0 auto;
+  width: 70%;
+  height: 14%;
+
+
+  img{
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+}
+
+.content{
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr ;
+  align-items: center;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr max-content;
+
+  }
+}

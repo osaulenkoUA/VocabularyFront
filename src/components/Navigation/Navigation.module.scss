@@ -1,0 +1,9 @@
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  text-transform: uppercase;
+  @media (min-width: 768px) {
+  grid-column-gap: 25px;
+}
+}

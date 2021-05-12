@@ -1,12 +1,12 @@
 .svgLightTheme {
   fill: #f30606;
-  width: 25px;
-  height: 25px;
+  width:inherit;
+  height: inherit;
 }
 .svgDarkTheme {
   fill: #ffffff;
-  width: 25px;
-  height: 25px;
+  width:inherit;
+  height: inherit;
 }
 .svgLightTheme:hover {
   fill: #ff000056;

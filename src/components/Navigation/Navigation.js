@@ -1,23 +1,22 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import authSelectors from '../../redux/auth/authSelectors.js';
-
-import s from './Navigation.module.css';
-import styles from './NavigationStyle.js';
-// import routes from '../../routes.js';
+import {NavLink} from 'react-router-dom';
+import routes from '../../routes';
+import s from './Navigation.module.scss';
+import {stylesD, stylesM} from './NavigationStyle.js';
+import screen from "../../helpers/breakpoints";
 
 const Navigation = () => {
-  const isAuth = useSelector(authSelectors.getToken);
+  const typeDevice = screen();
+  const isMobile = typeDevice === 'mobile';
   return (
     <nav className={s.list}>
-      <NavLink exact to="/books" style={styles.link} activeStyle={styles.activeLink}>
-        Add Word
-      </NavLink>
 
-      <NavLink exact to="/learn" style={styles.link} activeStyle={styles.activeLink}>
-        Learn
-      </NavLink>
+      {routes.map(route => route.privat ? (
+        <NavLink exact to={route.path} style={isMobile ? stylesM.link : stylesD.link}
+                 activeStyle={isMobile ? stylesM.activeLink : stylesD.activeLink}>
+          {route.label}
+        </NavLink>) : null)}
+
     </nav>
   );
 };

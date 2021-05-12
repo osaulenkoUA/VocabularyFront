@@ -1,23 +1,20 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import authOperation from '../../redux/auth/authOperation';
-import authSelectors from '../../redux/auth/authSelectors';
+
 import IconLogout from '../assets/IconLogout/IconLogout';
 import s from './UserMenu.module.scss';
-function UserMenu() {
-  const name = useSelector(authSelectors.getName);
-  const dispatch = useDispatch();
 
+const UserMenu = ({name, logOut,length}) => {
   return (
     <div className={s.wrapper}>
       <div className={s.content}>
+        <p className={s.total}>{`Total words: ${length}`}</p>
         <p className={s.title}>{`Wellcome, ${name}`}</p>
         <button
           className={s.btn}
           type="button"
-          onClick={() => dispatch(authOperation.logOut())}
+          onClick={logOut}
         >
-          <IconLogout />
+          <IconLogout/>
         </button>
       </div>
     </div>
@@ -25,3 +22,9 @@ function UserMenu() {
 }
 
 export default UserMenu;
+
+UserMenu.defaultProps = {
+  name: '',
+  logOut: () => {},
+  length:0
+}

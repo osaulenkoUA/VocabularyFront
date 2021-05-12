@@ -1,36 +1,30 @@
 import React from 'react';
-import { connect, useDispatch } from 'react-redux';
 
 import IconClose from '../assets/Svg/IconClose.js';
-import phoneBookOperation from '../../redux/PhoneBook/phoneBookOperation';
-import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.js';
 
-import s from './ContactListItem.module.css';
+import s from './ContactListItem.module.scss';
 
-const ContactItem = ({ word, translate, _id, theme }) => {
-  const dispatch = useDispatch();
-
+const ContactItem = ({elem, removeWords}) => {
+  const {word, translate, _id} = elem;
   return (
-    <li key={_id} className={s.list__item}>
+    <div key={word} className={s.list__item}>
       <span>{word}:</span>
-      <span>{translate}:</span>
-
+      <span>{translate}</span>
       <button
         className={s.btn_delete}
         type="button"
-        onClick={() => dispatch(phoneBookOperation.removeContact(_id))}
+        onClick={() => removeWords(_id)}
       >
-        <IconClose />
+        <IconClose/>
       </button>
-    </li>
+    </div>
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    ...phoneBookSelectors.getContactItem(state, ownProps.id),
-    theme: phoneBookSelectors.getTheme(state),
-  };
-};
 
-export default connect(mapStateToProps)(ContactItem);
+export default ContactItem;
+
+ContactItem.defaultProps = {
+  elem: {},
+  removeWords: () => {}
+};
