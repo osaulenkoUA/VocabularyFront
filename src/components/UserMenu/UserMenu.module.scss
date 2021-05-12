@@ -1,0 +1,39 @@
+.wrapper {
+  width: 100%;
+
+}
+
+.content {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  justify-content: end;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.title, .total {
+  color: rgb(53, 53, 134);
+  font-size: 14px;
+  font-weight: 600;
+  @media (min-width: 1024px){
+    font-size: 18px;
+
+  }
+}
+
+.total {
+  padding-top: 4px;
+  font-size: 14px;
+  line-height: 16px;
+  border-bottom: 1px solid red;
+  justify-self: end;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  @media (min-width: 1024px){
+    font-size: 18px;
+
+  }
+}
