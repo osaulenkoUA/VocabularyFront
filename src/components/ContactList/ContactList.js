@@ -2,7 +2,7 @@ import 'swiper/swiper.scss';
 import "../../styles/pagination.scss";
 import "swiper/components/effect-flip/effect-flip.min.css";
 import React from 'react';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
+// import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import SwiperCore, {EffectFlip, Pagination} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 

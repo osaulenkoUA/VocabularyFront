@@ -6,7 +6,6 @@ const getLoading = (state) => state.contacts.loading;
 
 const getFilter = (state) => state.contacts.filter;
 
-const getTheme = (state) => state.PhBookTheme.theme;
 
 const getConatctList = createSelector(
   [getContacts, getFilter],
@@ -25,6 +24,5 @@ export default {
   getContacts,
   getFilter,
   getLoading,
-  getTheme,
   getConatctList,
 };

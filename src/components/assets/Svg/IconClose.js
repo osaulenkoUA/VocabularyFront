@@ -1,13 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import s from './IconClose.module.css';
 
-const IconClose = state => {
-  const theme = state.PhBookTheme.theme;
+const IconClose = () => {
   return (
     <svg
-      className={theme === 'light' ? s.svgLightTheme : s.svgDarkTheme}
+      className={s.svgLightTheme}
       width="25"
       height="25"
       viewBox="0 0 32 32"
@@ -19,8 +17,5 @@ const IconClose = state => {
   );
 };
 
-const mapStateToProps = state => {
-  return { ...state };
-};
 
-export default connect(mapStateToProps)(IconClose);
+export default IconClose;

@@ -16,7 +16,6 @@ const removeContactsError = createAction('phoneBook/removeError');
 
 const changeFilter = createAction('phoneBook/changeFilter');
 
-const changeTheme = createAction('phoneBook/changeTheme');
 
 export default {
   addContactRequest,
@@ -32,5 +31,4 @@ export default {
   removeContactsError,
   //
   changeFilter,
-  changeTheme,
 };

@@ -11,8 +11,8 @@ import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.js';
 
 import Notification from "../../components/Notification/Notification.js";
 import ContactList from '../../components/ContactList/ContactList.js';
-import FilterContacts from '../../components/FilterContacts/FilterContacts.js';
-import ContactForm from '../../components/ContactForm/ContactForm.js';
+import FilterContacts from '../../components/FilterContacts/FilterContacts.tsx';
+import ContactForm from '../../components/ContactForm/ContactForm.tsx';
 
 import s from './App.module.css';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {persistor, store} from './redux/store.js';
+import {persistor, store} from './redux/store.ts';
 import {Provider} from 'react-redux';
 import './styles/index.scss';
 import {PersistGate} from 'redux-persist/integration/react';

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {FC, ReactElement} from 'react';
 
 import IconLogout from '../assets/IconLogout/IconLogout';
 import s from './UserMenu.module.scss';
 
-const UserMenu = ({name, logOut,length}) => {
+type PropTypes={
+  name?:string;
+  length?:number;
+  logOut:()=>void;
+  children?:never;
+}
+
+const UserMenu:FC<PropTypes> = ({name, logOut,length}:PropTypes):ReactElement => {
   return (
     <div className={s.wrapper}>
       <div className={s.content}>

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {FC, ReactElement, ReactNode} from 'react';
 
 import Footer from "../Footer/Footer";
+import Header from '../Header/Header';
 
-import Header from '../Header/Header.js';
 import s from './Section.module.scss';
 
-const Section = ({children}) => {
+type PropTypes={
+    children?: ReactNode;
+}
+
+const Section:FC<PropTypes> = ({children}:PropTypes):ReactElement => {
   return (
     <section className={s.container}>
       <Header/>
