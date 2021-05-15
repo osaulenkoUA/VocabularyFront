@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FC, FormEvent, ReactElement, useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
 
-import Notification from '../Notification/Notification.js';
+import Notification from '../Notification/Notification';
 
 import s from './ContactForm.module.scss';
 

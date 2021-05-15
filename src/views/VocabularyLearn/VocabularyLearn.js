@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import phoneBookOperation from '../../redux/PhoneBook/phoneBookOperation';
-import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.js';
+import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.ts';
 
 import s from './VocabularyLearn.module.scss';
 

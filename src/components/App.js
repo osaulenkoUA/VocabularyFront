@@ -9,7 +9,7 @@ import Section from './Section/Section.tsx';
 import Spinner from './Spinner/Spinner.tsx';
 
 import authOperation from '../redux/auth/authOperation.js';
-import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors.js';
+import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors.ts';
 
 function App() {
   const loading = useSelector(phoneBookSelectors.getLoading);

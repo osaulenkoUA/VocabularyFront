@@ -7,7 +7,7 @@ import screen from "../../helpers/breakpoints";
 
 import phoneBookOperation from '../../redux/PhoneBook/phoneBookOperation';
 import phoneBookAction from "../../redux/PhoneBook/phoneBookActions";
-import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.js';
+import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.ts';
 
 import Notification from "../../components/Notification/Notification.tsx";
 import ContactList from '../../components/ContactList/ContactList.tsx';
