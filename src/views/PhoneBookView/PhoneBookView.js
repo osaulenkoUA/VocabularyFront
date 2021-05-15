@@ -9,7 +9,7 @@ import phoneBookOperation from '../../redux/PhoneBook/phoneBookOperation';
 import phoneBookAction from "../../redux/PhoneBook/phoneBookActions";
 import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors.js';
 
-import Notification from "../../components/Notification/Notification.js";
+import Notification from "../../components/Notification/Notification.tsx";
 import ContactList from '../../components/ContactList/ContactList.tsx';
 import FilterContacts from '../../components/FilterContacts/FilterContacts.tsx';
 import ContactForm from '../../components/ContactForm/ContactForm.tsx';
