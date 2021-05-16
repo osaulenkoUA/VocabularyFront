@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import authOperation from '../../redux/auth/authOperation.js';
+import authOperation from '../../redux/auth/authOperation.ts';
 import vocabulary from '../../images/vocabulary.jpg';
 import s from './LogIn.module.scss';
 import styles from './LinkStyle';

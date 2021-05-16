@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import { useDispatch } from 'react-redux';
 
 import phoneBookReducer from './PhoneBook/phoneBookReducer';
-import authReducer from './auth/authReducer.js';
+import authReducer from './auth/authReducer';
 
 const authPersistConfig = {
   key: 'auth',

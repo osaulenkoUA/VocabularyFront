@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import authOperation from '../../redux/auth/authOperation.js';
+import authOperation from '../../redux/auth/authOperation.ts';
 import s from './Register.module.scss';
 import { NavLink } from 'react-router-dom';
 import styles from './LinkStyle';

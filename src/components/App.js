@@ -8,7 +8,7 @@ import PublicRoute from './Routes/PublicRoute.js';
 import Section from './Section/Section.tsx';
 import Spinner from './Spinner/Spinner.tsx';
 
-import authOperation from '../redux/auth/authOperation.js';
+import authOperation from '../redux/auth/authOperation.ts';
 import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors.ts';
 
 function App() {

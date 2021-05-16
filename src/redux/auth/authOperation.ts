@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-import authActions from './authActions.ts';
+import {user} from "../../types/user";
+import authActions from './authActions';
+import {AppDispatch} from "../store";
 
 axios.defaults.baseURL = 'https://sleepy-escarpment-78189.herokuapp.com';
 
@@ -12,13 +13,15 @@ const token = {
     axios.defaults.headers.common.Authorization = '';
   },
 };
-
-const register = ({ name, email, password, passwordConfirm }) => async (
-  dispatch,
+type getUser= {
+  data:user;
+}
+const register = ({ name, email, password, passwordConfirm }:user) => async (
+  dispatch:AppDispatch,
 ) => {
   dispatch(authActions.registerRequest());
   try {
-    const { data } = await axios.post('/users/signup', {
+    const { data }:getUser = await axios.post('/users/signup', {
       name,
       email,
       password,
@@ -31,10 +34,10 @@ const register = ({ name, email, password, passwordConfirm }) => async (
   }
 };
 
-const logIn = ({ email, password }) => async (dispatch) => {
+const logIn = ({ email, password }:user) => async (dispatch:AppDispatch) => {
   dispatch(authActions.logInRequest());
   try {
-    const { data } = await axios.post('/users/signin', {
+    const { data }:getUser = await axios.post('/users/signin', {
       email,
       password,
     });
@@ -45,7 +48,7 @@ const logIn = ({ email, password }) => async (dispatch) => {
   }
 };
 
-const logOut = () => async (dispatch) => {
+const logOut = () => async (dispatch:AppDispatch) => {
   dispatch(authActions.logOutRequest());
   try {
     await axios.post('/users/logout');
@@ -56,7 +59,7 @@ const logOut = () => async (dispatch) => {
   }
 };
 
-const getCurrentUser = () => async (dispatch, getState) => {
+const getCurrentUser = () => async (dispatch:AppDispatch, getState) => {
   const state = getState();
   const persistedToken = state.auth.token;
   if (!persistedToken) return;
