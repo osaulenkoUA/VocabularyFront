@@ -5,7 +5,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 
 import { useDispatch } from 'react-redux';
 
-import phoneBookReducer from './PhoneBook/phoneBookReducer.js';
+import phoneBookReducer from './PhoneBook/phoneBookReducer';
 import authReducer from './auth/authReducer.js';
 
 const authPersistConfig = {
@@ -22,6 +22,8 @@ export const store = configureStore({
 
 });
 export type RootState = ReturnType<typeof store.getState>
+
 export const persistor = persistStore(store);
+
 export type AppDispatch = typeof store.dispatch
 export const useAppDispatch = () => useDispatch<AppDispatch>() // Export a hook that can be reused to resolve types

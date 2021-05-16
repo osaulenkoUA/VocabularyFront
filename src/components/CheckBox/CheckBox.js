@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import phoneBookActions from '../../redux/PhoneBook/phoneBookActions.js';
+import phoneBookActions from '../../redux/PhoneBook/phoneBookActions.ts';
 
 import s from './CheckBox.module.css';
 

@@ -8,14 +8,16 @@ const getLoading = (state:RootState) => state.contacts.loading;
 
 const getFilter = (state:RootState) => state.contacts.filter;
 
-interface data {
+
+interface content {
     word: string;
     translate: string;
     _id:string;
+    userId:string
 }
-const getConatctList = createSelector(
+const getConatctList= createSelector(
   [getContacts, getFilter],
-  (contacts:data[], filter:string) => {
+  (contacts:content[], filter:string):content[] => {
     return contacts.filter(({ word }) =>
       word.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
     );
