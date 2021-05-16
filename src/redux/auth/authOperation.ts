@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {userCurrent} from '../../types/user';
+import {userCurrent,logInUser} from '../../types/user';
 import authActions from './authActions';
 import {AppDispatch, RootState} from "../store";
 
@@ -49,7 +49,7 @@ const register = ({name, email, password, passwordConfirm}: userCurrent) => asyn
     }
 };
 
-const logIn = ({email, password}: userCurrent) => async (dispatch: AppDispatch) => {
+const logIn = ({email, password}: logInUser) => async (dispatch: AppDispatch) => {
     dispatch(authActions.logInRequest());
     try {
         const {data}: getUser = await axios.post('/users/signin', {

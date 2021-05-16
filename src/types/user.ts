@@ -4,3 +4,10 @@ export interface userCurrent {
     password?: string;
     passwordConfirm?: string;
 }
+
+export interface logInUser {
+
+    email: string;
+    password: string;
+
+}
