@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-
+import {content}from "../../types/types"
 import {RootState} from '../store';
 
 const getContacts = (state:RootState) => state.contacts.items;
@@ -9,12 +9,6 @@ const getLoading = (state:RootState) => state.contacts.loading;
 const getFilter = (state:RootState) => state.contacts.filter;
 
 
-interface content {
-    word: string;
-    translate: string;
-    _id:string;
-    userId:string
-}
 const getConatctList= createSelector(
   [getContacts, getFilter],
   (contacts:content[], filter:string):content[] => {
@@ -23,10 +17,6 @@ const getConatctList= createSelector(
     );
   },
 );
-
-
-
-
 
 export default {
   getContacts,

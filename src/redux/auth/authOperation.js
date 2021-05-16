@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import authActions from './authActions.js';
+import authActions from './authActions.ts';
 
 axios.defaults.baseURL = 'https://sleepy-escarpment-78189.herokuapp.com';
 

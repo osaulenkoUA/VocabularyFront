@@ -1,12 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-
-// --------------------------------------------------------------------------------------
-interface content {
-  word?: string;
-  translate?: string;
-  _id?:string;
-  userId?:string
-}
+import {content}from '../../types/types'
 
 const addContactRequest = createAction('phoneBook/addRequest');
 const addContactSuccess = createAction<content>('phoneBook/addSuccess');

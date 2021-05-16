@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import authSelectors from '../../redux/auth/authSelectors.js';
+import authSelectors from '../../redux/auth/authSelectors.ts';
 
 /**
  * - Если маршрут ограниченный, и пользователь залогинен, рендерит редирект на /tasks

@@ -1,25 +1,19 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-
+import {content} from "../../types/types"
 import phoneBookActions from './phoneBookActions';
 
-interface data {
-  word: string;
-  translate: string;
-  _id:string;
-  userId:string
-}
 
-const onAddContact = (state:data[], {payload}:any):data[] => [...state, payload];
+const onAddContact = (state:content[], {payload}:any):content[] => [...state, payload];
 
-const onRemoveContact = (state:data[], { payload }:any):data[] =>
+const onRemoveContact = (state:content[], { payload }:any):content[] =>
     state.filter(item => item._id !== payload);
 
-const initState:data[]=[];
+const initState:content[]=[];
 
 const items = createReducer(initState, builder =>{
   builder.addCase(phoneBookActions.addContactSuccess,onAddContact);
-  builder.addCase(phoneBookActions.fetchContactsSuccess,(state:data[], { payload }:any):Array<data> => payload);
+  builder.addCase(phoneBookActions.fetchContactsSuccess,(state:content[], { payload }:any):Array<content> => payload);
   builder.addCase(phoneBookActions.removeContactsSuccess,onRemoveContact);
 } );
 
