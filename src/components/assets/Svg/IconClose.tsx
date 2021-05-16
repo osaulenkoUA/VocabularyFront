@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './IconClose.module.css';
+import s from './IconClose.module.scss';
 
 const IconClose = () => {
   return (

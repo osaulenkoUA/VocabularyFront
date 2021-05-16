@@ -5,8 +5,8 @@ import s from './Register.module.scss';
 import { NavLink } from 'react-router-dom';
 import styles from './LinkStyle';
 
-import SvgEye from '../../components/assets/SvgEye/SvgEye.js';
-import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide.js';
+import SvgEye from '../../components/assets/SvgEye/SvgEye.tsx';
+import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide.tsx';
 
 function PhoneBookRegister() {
   const [name, setName] = useState('');

@@ -5,8 +5,8 @@ import authOperation from '../../redux/auth/authOperation.ts';
 import vocabulary from '../../images/vocabulary.jpg';
 import s from './LogIn.module.scss';
 import styles from './LinkStyle';
-import SvgEye from '../../components/assets/SvgEye/SvgEye.js';
-import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide.js';
+import SvgEye from '../../components/assets/SvgEye/SvgEye.tsx';
+import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide.tsx';
 
 function PhoneBookLogIn() {
   const [email, setEmail] = useState('');

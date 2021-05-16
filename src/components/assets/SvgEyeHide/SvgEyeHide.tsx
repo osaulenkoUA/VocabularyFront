@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './SvgEyeHide.module.css';
+import s from './SvgEyeHide.module.scss';
 
 const SvgEyeHide = () => {
   return (

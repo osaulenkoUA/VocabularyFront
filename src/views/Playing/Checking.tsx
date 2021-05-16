@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {FC, ReactElement} from 'react';
 
 import s from './Checking.module.scss';
 
-function Checking() {
+const Checking:FC=():ReactElement=> {
 
 
   return (

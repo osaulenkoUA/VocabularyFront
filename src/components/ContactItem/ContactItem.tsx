@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {content} from '../../types/types'
 
-import IconClose from '../assets/Svg/IconClose.js';
+import IconClose from '../assets/Svg/IconClose';
 
 import s from './ContactListItem.module.scss';
 
