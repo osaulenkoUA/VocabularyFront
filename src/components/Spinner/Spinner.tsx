@@ -2,7 +2,7 @@ import React,{FC} from 'react';
 import Loader from 'react-loader-spinner';
 
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import s from './Spiner.module.css';
+import s from './Spiner.module.scss';
 
 const Spinner: FC = () => {
     return (
