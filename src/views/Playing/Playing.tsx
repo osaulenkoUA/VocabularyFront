@@ -2,7 +2,7 @@ import React, {FC, ReactElement} from 'react';
 
 import s from './Checking.module.scss';
 
-const Checking:FC=():ReactElement=> {
+const Playing:FC=():ReactElement=> {
 
 
   return (
@@ -12,4 +12,4 @@ const Checking:FC=():ReactElement=> {
   );
 }
 
-export default Checking;
+export default Playing;
