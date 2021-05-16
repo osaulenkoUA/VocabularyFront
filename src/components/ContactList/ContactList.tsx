@@ -27,7 +27,7 @@ const ContactList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
     return (
         <>
             <Swiper effect={'flip'} grabCursor={true} pagination={pagination} spaceBetween={5} slidesPerView={1}>
-                {newList.map((el: any, idx): ReactElement => (
+                {newList.map((el:any, idx): ReactElement => (
                     <SwiperSlide key={idx}>
                         {/*<TransitionGroup component="div" className={s.list}>*/}
                         <div className={s.list}>

@@ -1,14 +1,24 @@
 import { createAction } from '@reduxjs/toolkit';
-import {user} from "../../types/user";
+import {userCurrent} from "../../types/user";
 
+ type payload={
+   token:string;
+   user:userCurrent;
+
+}
+type CurrentUser={
+  email:string;
+  id:string;
+  name:string;
+}
 // --------------------------------------------------------------------------------------
 
 const registerRequest = createAction('auth/registerRequest');
-const registerSuccess = createAction<user>('auth/registerSuccess');
+const registerSuccess = createAction<payload>('auth/registerSuccess');
 const registerError = createAction<{}>('auth/registerError');
 
 const logInRequest = createAction('auth/logInRequest');
-const logInSuccess = createAction<user>('auth/logInSuccess');
+const logInSuccess = createAction<payload>('auth/logInSuccess');
 const logInError = createAction<{}>('auth/logInError');
 
 const logOutRequest = createAction('auth/logOutRequest');
@@ -16,7 +26,7 @@ const logOutSuccess = createAction('auth/logOutSuccess');
 const logOutError = createAction<{}>('auth/logOutError');
 
 const getCurrentUserRequest = createAction('auth/getCurrentUserRequest');
-const getCurrentUserSuccess = createAction<user>('auth/getCurrentUserSuccess');
+const getCurrentUserSuccess = createAction<CurrentUser>('auth/getCurrentUserSuccess');
 const getCurrentUserError = createAction<{}>('auth/getCurrentUserError');
 
 export default {

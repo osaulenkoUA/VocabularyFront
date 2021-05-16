@@ -1,47 +1,48 @@
 import axios from 'axios';
-import {content,addWord} from '../../types/types'
+import {addWord, content} from '../../types/types'
 import phoneBookAction from './phoneBookActions';
 import {AppDispatch} from '../store';
+
 axios.defaults.baseURL = 'https://sleepy-escarpment-78189.herokuapp.com';
 
-type addData= {
- data:content;
+type addData = {
+    data: content;
 }
-type getData= {
-  data:content[];
+type getData = {
+    data: content[];
 }
-const addContact = ({ word, translate }:addWord) => async (dispatch:AppDispatch) => {
-  dispatch(phoneBookAction.addContactRequest());
-  try {
-    const { data }:addData = await axios.post('/vocabulary/addword', { word, translate });
-    dispatch(phoneBookAction.addContactSuccess(data));
-  } catch (error) {
-    dispatch(phoneBookAction.addContactError(error));
-  }
+const addContact = ({word, translate}: addWord) => async (dispatch: AppDispatch) => {
+    dispatch(phoneBookAction.addContactRequest());
+    try {
+        const {data}: addData = await axios.post('/vocabulary/addword', {word, translate});
+        dispatch(phoneBookAction.addContactSuccess(data));
+    } catch (error) {
+        dispatch(phoneBookAction.addContactError(error));
+    }
 };
 
-const fetchContact = () => async (dispatch:AppDispatch) => {
-  dispatch(phoneBookAction.fetchContactsRequest());
-  try {
-    const { data }:getData = await axios.get('/vocabulary/words');
-    dispatch(phoneBookAction.fetchContactsSuccess(data));
-  } catch (error) {
-    dispatch(phoneBookAction.fetchContactsError(error));
-  }
+const fetchContact = () => async (dispatch: AppDispatch) => {
+    dispatch(phoneBookAction.fetchContactsRequest());
+    try {
+        const {data}: getData = await axios.get('/vocabulary/words');
+        dispatch(phoneBookAction.fetchContactsSuccess(data));
+    } catch (error) {
+        dispatch(phoneBookAction.fetchContactsError(error));
+    }
 };
 
-const removeContact = (id:string)=> async (dispatch:AppDispatch) => {
-  dispatch(phoneBookAction.removeContactsRequest());
-  try {
-    axios.delete(`/vocabulary/delete/${id}`);
-    dispatch(phoneBookAction.removeContactsSuccess(id));
-  } catch (error) {
-    dispatch(phoneBookAction.removeContactsError(error));
-  }
+const removeContact = (id: string) => async (dispatch: AppDispatch) => {
+    dispatch(phoneBookAction.removeContactsRequest());
+    try {
+        axios.delete(`/vocabulary/delete/${id}`);
+        dispatch(phoneBookAction.removeContactsSuccess(id));
+    } catch (error) {
+        dispatch(phoneBookAction.removeContactsError(error));
+    }
 };
 
 export default {
-  addContact,
-  fetchContact,
-  removeContact,
+    addContact,
+    fetchContact,
+    removeContact,
 };

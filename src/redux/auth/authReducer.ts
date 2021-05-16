@@ -1,31 +1,29 @@
 import {combineReducers} from 'redux';
 import {createReducer} from '@reduxjs/toolkit';
-
 import authActions from './authActions';
+import {userCurrent} from '../../types/user'
 
-interface user {
-    name: string;
-    email: string;
-    password?: string;
-    passwordConfirm?: string;
+type PayloadAddUser = {
+    payload: {
+        token: string;
+        user: userCurrent;
+    };
+}
+type PayloadGetUser = {
+    payload: {
+        email: string;
+        id: string;
+        name: string;
+    }
 }
 
-// interface payloadAuth {
-//   name:string;
-//   email:string;
-//   id:string;
-// }
-// type foo={
-//   payload:payloadAuth;
-// }
-
-const initialState: user = {
+const initialState: userCurrent = {
     name: '',
     email: '',
 };
 
-const addUser = (state: user, {payload}: any) => payload.user;
-const getUser = (state: user, {payload}: any) => payload;
+const addUser = (state: userCurrent, {payload}: PayloadAddUser) => payload.user;
+const getUser = (state: userCurrent, {payload}: PayloadGetUser) => payload;
 
 const user = createReducer(initialState, builder => {
     builder.addCase(authActions.registerSuccess, addUser);
@@ -35,8 +33,8 @@ const user = createReducer(initialState, builder => {
 })
 
 const token = createReducer('', builder => {
-    builder.addCase(authActions.registerSuccess, (state: string, {payload}: any) => payload.token);
-    builder.addCase(authActions.logInSuccess, (state: string, {payload}: any) => payload.token);
+    builder.addCase(authActions.registerSuccess, (state: string, {payload}: PayloadAddUser) => payload.token);
+    builder.addCase(authActions.logInSuccess, (state: string, {payload}: PayloadAddUser) => payload.token);
     builder.addCase(authActions.logOutSuccess, () => '');
 })
 

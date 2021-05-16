@@ -1,5 +1,5 @@
-import { createAction } from '@reduxjs/toolkit';
-import {content}from '../../types/types'
+import {createAction} from '@reduxjs/toolkit';
+import {content} from '../../types/types'
 
 const addContactRequest = createAction('phoneBook/addRequest');
 const addContactSuccess = createAction<content>('phoneBook/addSuccess');
@@ -16,17 +16,17 @@ const removeContactsError = createAction<{}>('phoneBook/removeError');
 const changeFilter = createAction<string>('phoneBook/changeFilter');
 
 export default {
-  addContactRequest,
-  addContactSuccess,
-  addContactError,
-  //
-  fetchContactsRequest,
-  fetchContactsSuccess,
-  fetchContactsError,
-  //
-  removeContactsRequest,
-  removeContactsSuccess,
-  removeContactsError,
-  //
-  changeFilter,
+    addContactRequest,
+    addContactSuccess,
+    addContactError,
+    //
+    fetchContactsRequest,
+    fetchContactsSuccess,
+    fetchContactsError,
+    //
+    removeContactsRequest,
+    removeContactsSuccess,
+    removeContactsError,
+    //
+    changeFilter,
 };
