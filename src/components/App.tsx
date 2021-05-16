@@ -1,19 +1,20 @@
-import React, {Suspense, useEffect} from 'react';
+import React, {FC, ReactElement, Suspense, useEffect} from 'react';
 import {BrowserRouter, Switch} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 import routes from '../routes.js';
-import PrivateRoute from './Routes/PrivateRoute.js';
-import PublicRoute from './Routes/PublicRoute.js';
-import Section from './Section/Section.tsx';
-import Spinner from './Spinner/Spinner.tsx';
+import PrivateRoute from './Routes/PrivateRoute';
+import PublicRoute from './Routes/PublicRoute';
+import Section from './Section/Section';
+import Spinner from './Spinner/Spinner';
 
-import authOperation from '../redux/auth/authOperation.ts';
-import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors.ts';
+import authOperation from '../redux/auth/authOperation';
+import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors';
+import {useAppDispatch} from "../redux/store";
 
-function App() {
-  const loading = useSelector(phoneBookSelectors.getLoading);
-  const dispatch = useDispatch();
+const App:FC=():ReactElement=> {
+  const loading:boolean = useSelector(phoneBookSelectors.getLoading);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(authOperation.getCurrentUser());
