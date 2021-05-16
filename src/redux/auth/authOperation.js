@@ -38,6 +38,7 @@ const logIn = ({ email, password }) => async (dispatch) => {
       email,
       password,
     });
+    console.log(data);
     token.set(data.token);
     dispatch(authActions.logInSuccess(data));
   } catch (error) {
