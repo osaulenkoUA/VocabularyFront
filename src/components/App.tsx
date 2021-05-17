@@ -1,7 +1,7 @@
 import React, {FC, ReactElement, Suspense, useEffect} from 'react';
 import {BrowserRouter, Switch} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-
+import {iRoutes}from '../types/iRoutes';
 import routes from '../routes';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
@@ -19,14 +19,7 @@ const App:FC=():ReactElement=> {
   useEffect(() => {
     dispatch(authOperation.getCurrentUser());
   }, []);
-  interface route{
-    path: string;
-    label: string;
-    exact: boolean;
-    component: any;
-    privat:boolean;
-    restricted: boolean;
-  }
+
   return (
     <BrowserRouter>
       <Section>
@@ -34,7 +27,7 @@ const App:FC=():ReactElement=> {
 
         <Suspense fallback={<Spinner/>}>
           <Switch>
-            {routes.map((route:route) =>
+            {routes.map((route:iRoutes) =>
               route.privat ? (
                 <PrivateRoute key={route.label} {...route} />
               ) : (

@@ -1,8 +1,9 @@
-import React, {FC, lazy, ReactElement} from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import authSelectors from '../../redux/auth/authSelectors';
+import {iRoutes} from "../../types/iRoutes";
 
 /**
  * - Если маршрут ограниченный, и пользователь залогинен, рендерит редирект на /tasks
@@ -10,13 +11,12 @@ import authSelectors from '../../redux/auth/authSelectors';
  */
 
 
-const PublicRoute = ({ component: Component, ...routeProps }) => {
-  const isAuthenticated = useSelector(authSelectors.getToken);
-console.log(routeProps);
+const PublicRoute = ({ component: Component, ...routeProps }:iRoutes) => {
+  const isAuthenticated:string = useSelector(authSelectors.getToken);
   return (
     <Route
       {...routeProps}
-      render={props =>
+      render={(props:{}) =>
         isAuthenticated && routeProps.restricted ? (
           <Redirect to="/list" />
         ) : (
