@@ -34,17 +34,21 @@ function VocabularyLearn() {
 
     return (
         <div className={s.wrapper}>
-            <h2>Learn with us</h2>
 
-            <div className={s.content}>
-                <h3>{contacts[idx]?.word}</h3>
-                <h3 className={s.translate}>{istranslate ? contacts[idx]?.translate : null}</h3>
+            <h2>Check of knolwledge</h2>
+
+            <div className={s.check}>
+                <div className={s.content}>
+                    <h3>{contacts[idx]?.word}</h3>
+                    <h3 className={s.translate}>{istranslate ? contacts[idx]?.translate : null}</h3>
+                </div>
             </div>
 
             <div className={s.wrapBtn}>
-                <button onClick={next}>Next</button>
                 <button onClick={showTranslate}>Translate</button>
+                <button onClick={next}>Next word</button>
             </div>
+
         </div>
     );
 }
