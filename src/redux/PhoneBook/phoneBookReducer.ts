@@ -13,7 +13,7 @@ type ActionAdd = {
     payload: content;
 }
 
-const onAddContact = (state: content[], {payload}: ActionAdd): content[] => [...state, payload];
+const onAddContact = (state: content[], {payload}: ActionAdd): content[] => [payload,...state];
 const fetchContact = (state: content[], {payload}: ActionFeth): Array<content> => payload;
 const onRemoveContact = (state: content[], {payload}: ActionRemove): content[] =>
     state.filter(item => item._id !== payload);

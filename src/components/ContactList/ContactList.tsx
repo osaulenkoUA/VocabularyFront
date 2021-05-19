@@ -2,7 +2,6 @@ import 'swiper/swiper.scss';
 import "../../styles/pagination.scss";
 import "swiper/components/effect-flip/effect-flip.min.css";
 import React, {FC, ReactElement} from 'react';
-// import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import SwiperCore, {EffectFlip, Pagination} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {content} from '../../types/types'
@@ -24,20 +23,17 @@ type PropTypes = {
 }
 
 const ContactList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
+    console.log(newList[0]);
     return (
         <>
             <Swiper effect={'flip'} grabCursor={true} pagination={pagination} spaceBetween={5} slidesPerView={1}>
-                {newList.map((el:any, idx): ReactElement => (
+                {newList.map((el:any, idx:number): ReactElement => (
                     <SwiperSlide key={idx}>
-                        {/*<TransitionGroup component="div" className={s.list}>*/}
                         <div className={s.list}>
                             {el.map((elem: content) => (
-                                // <CSSTransition key={elem._id} timeout={250} classNames={s} unmountOnExit>
                                 <ContactItem elem={elem} removeWords={removeWords}/>
-                                // </CSSTransition>
                             ))}
                         </div>
-                        {/*</TransitionGroup>*/}
                     </SwiperSlide>
                 ))
                 }

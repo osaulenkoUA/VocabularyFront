@@ -27,7 +27,7 @@ const PhoneBookView: FC = (): ReactElement => {
     const [isExistWord, setIsExistWord] = useState<boolean>(false);
     const contacts: content[] = useSelector(phoneBookSelectors.getContacts);
 
-    const list: content[] = useSelector(phoneBookSelectors.getConatctList).reverse();
+    const list: content[] = useSelector(phoneBookSelectors.getConatctList);
     const newList: content[] = isMobile ? createArray(list, 10) : createArray(list, 20);
 
     useEffect(() => {
@@ -40,8 +40,8 @@ const PhoneBookView: FC = (): ReactElement => {
     const isShowContactList: boolean = isContacts !== 0;
 
     const addWord = (data: addWord) => {
-        console.log(data.word);
         setIsExistWord(false);
+        if (!data.word || !data.translate) {alert('Заповни поля'); return;}
         const isWord = contacts.find(el => el.word === data.word);
         !isWord ? dispatch(phoneBookOperation.addContact(data)) : setIsExistWord(true);
     }

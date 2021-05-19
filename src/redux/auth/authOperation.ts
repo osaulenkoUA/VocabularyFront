@@ -60,6 +60,7 @@ const logIn = ({email, password}: logInUser) => async (dispatch: AppDispatch) =>
         dispatch(authActions.logInSuccess(data));
     } catch (error) {
         dispatch(authActions.logInError(error));
+        console.dir(error);
     }
 };
 

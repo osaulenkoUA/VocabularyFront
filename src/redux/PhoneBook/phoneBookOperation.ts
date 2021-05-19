@@ -25,6 +25,7 @@ const fetchContact = () => async (dispatch: AppDispatch) => {
     dispatch(phoneBookAction.fetchContactsRequest());
     try {
         const {data}: getData = await axios.get('/vocabulary/words');
+        data.reverse();
         dispatch(phoneBookAction.fetchContactsSuccess(data));
     } catch (error) {
         dispatch(phoneBookAction.fetchContactsError(error));
