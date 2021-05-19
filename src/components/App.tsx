@@ -6,15 +6,16 @@ import routes from '../routes';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
 import Section from './Section/Section';
-import Spinner from './Spinner/Spinner';
 
 import authOperation from '../redux/auth/authOperation';
 import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors';
 import {useAppDispatch} from "../redux/store";
+import SpinnerVocabulary from "./SpinnerCircle/SpinnerVocabulary";
 
 const App:FC=():ReactElement=> {
-  const loading:boolean = useSelector(phoneBookSelectors.getLoading);
+
   const dispatch = useAppDispatch();
+  const loading:boolean = useSelector(phoneBookSelectors.getLoading);
 
   useEffect(() => {
     dispatch(authOperation.getCurrentUser());
@@ -23,9 +24,9 @@ const App:FC=():ReactElement=> {
   return (
     <BrowserRouter>
       <Section>
-        {loading && <Spinner/>}
+        {loading && <SpinnerVocabulary/>}
 
-        <Suspense fallback={<Spinner/>}>
+        <Suspense fallback={<SpinnerVocabulary/>}>
           <Switch>
             {routes.map((route:iRoutes) =>
               route.privat ? (

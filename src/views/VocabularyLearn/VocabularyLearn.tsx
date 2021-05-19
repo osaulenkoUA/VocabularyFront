@@ -39,7 +39,7 @@ function VocabularyLearn() {
 
             <div className={s.check}>
                 <div className={s.content}>
-                    <h3>{contacts[idx]?.word}</h3>
+                    <h3 className={s.word}>{contacts[idx]?.word}</h3>
                     <h3 className={s.translate}>{istranslate ? contacts[idx]?.translate : null}</h3>
                 </div>
             </div>

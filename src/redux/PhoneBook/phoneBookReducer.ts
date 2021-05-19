@@ -24,6 +24,8 @@ const items = createReducer(initState, builder => {
     builder.addCase(phoneBookActions.addContactSuccess, onAddContact);
     builder.addCase(phoneBookActions.fetchContactsSuccess, fetchContact);
     builder.addCase(phoneBookActions.removeContactsSuccess, onRemoveContact);
+    builder.addCase(phoneBookActions.resetContacts, ()=>initState);
+
 });
 
 const filter = createReducer('', builder => {

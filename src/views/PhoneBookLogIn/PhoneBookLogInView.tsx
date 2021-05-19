@@ -8,8 +8,9 @@ import SvgEye from '../../components/assets/SvgEye/SvgEye';
 import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide';
 import {RootState, useAppDispatch} from "../../redux/store";
 import {logInUser} from "../../types/user";
+import Spinner from "../../components/Spinner/Spinner";
 
-function PhoneBookLogIn() {
+const PhoneBookLogInView = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useAppDispatch();
@@ -36,6 +37,7 @@ function PhoneBookLogIn() {
 
     return (
         <section className={s.container}>
+
             <div className={s.wrapForm}>
                 <h4 className={s.formTitle}>Sign in Learning words</h4>
                 <form onSubmit={handleSubmit} className={s.form}>
@@ -63,9 +65,13 @@ function PhoneBookLogIn() {
                         />
                     </label>
 
-                    <button type="submit" className={s.form__btn}>
+                    {!loading && <div className={s.wrapBTN}>
+                      <button type="submit" className={s.form__btn}>
                         Sign in
-                    </button>
+                      </button>
+                    </div>}
+                    {loading && <div className={s.wrapSpinner}><Spinner/></div>}
+
                     <button type="button" onClick={onHandleClick} className={s.passShow__btn}>
                         {show === 'password' ? <SvgEye/> : <SvgEyeHide/>}
                     </button>
@@ -80,4 +86,4 @@ function PhoneBookLogIn() {
     );
 }
 
-export default PhoneBookLogIn;
+export default PhoneBookLogInView;

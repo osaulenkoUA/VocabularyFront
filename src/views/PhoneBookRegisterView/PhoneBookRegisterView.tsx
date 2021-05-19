@@ -9,6 +9,7 @@ import SvgEye from '../../components/assets/SvgEye/SvgEye';
 import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide';
 import {RootState, useAppDispatch} from "../../redux/store";
 import {userCurrent} from "../../types/user";
+import Spinner from "../../components/Spinner/Spinner";
 
 function PhoneBookRegister() {
     const [name, setName] = useState('');
@@ -51,6 +52,8 @@ function PhoneBookRegister() {
 
     return (
         <section className={s.container}>
+            {loading && <Spinner/>}
+
             <div className={s.wrapForm}>
                 <NavLink exact to="/" style={styles.link}>
                     Back to Sign in
@@ -102,13 +105,18 @@ function PhoneBookRegister() {
                         />
                     </label>
 
-                    <button
+                    {!loading&& <div className={s.wrapBTN}>
+                      <button
                         type="submit"
                         disabled={avtiveBtn}
                         className={!avtiveBtn ? s.form__btn : s.notActive}
-                    >
+                      >
                         Sign up
-                    </button>
+                      </button>
+                    </div>}
+
+                    {loading && <div className={s.wrapSpinner}><Spinner/></div>}
+
                     <button type="button" onClick={onHandleClick} className={s.passShow__btn}>
                         {show === 'password' ? <SvgEye/> : <SvgEyeHide/>}
                     </button>

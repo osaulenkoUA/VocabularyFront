@@ -66,11 +66,23 @@
   color: #a5a5ad;
 }
 
+.wrapBTN{
+  width: 360px;
+  text-align: center;
+  height: 70px;
+}
+
+.wrapSpinner{
+  margin-top: 25px;
+  width: 360px;
+  text-align: center;
+  height: 40px;
+}
 .form__btn {
   margin: 0 auto;
   width: 320px;
   height: 48px;
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
   cursor: pointer;
   background-color: #2f5794;
   color: #ffffff;

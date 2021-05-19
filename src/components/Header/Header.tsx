@@ -12,6 +12,7 @@ import UserMenu from '../UserMenu/UserMenu';
 
 import s from "./Header.module.scss";
 import engImg from '../../images/eng1.png';
+import phoneBookActions from "../../redux/PhoneBook/phoneBookActions";
 
 const Header: FC = ():ReactElement => {
     const dispatch = useAppDispatch();
@@ -20,7 +21,10 @@ const Header: FC = ():ReactElement => {
     const name: string = useSelector(authSelectors.getName);
     const length: number = useSelector(phoneBookSelectors.getContacts).length;
 
-    const logOut = () => dispatch(authOperation.logOut());
+    const logOut = () => {
+        dispatch(authOperation.logOut());
+        dispatch(phoneBookActions.resetContacts());
+    }
 
     return (
         <div className={s.header}>

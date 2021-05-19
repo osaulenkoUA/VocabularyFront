@@ -1,5 +1,5 @@
 import {createSelector} from '@reduxjs/toolkit';
-import {content} from "../../types/types"
+import {addWord, content} from "../../types/types"
 import {RootState} from '../store';
 
 const getContacts = (state: RootState) => state.contacts.items;
@@ -12,8 +12,8 @@ const getFilter = (state: RootState) => state.contacts.filter;
 const getConatctList = createSelector(
     [getContacts, getFilter],
     (contacts: content[], filter: string): content[] => {
-        return contacts.filter(({word}) =>
-            word.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
+        return contacts.filter(({word, translate}:addWord) =>
+            word?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || translate?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
         );
     },
 );

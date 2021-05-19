@@ -15,6 +15,9 @@ const removeContactsError = createAction<{}>('phoneBook/removeError');
 
 const changeFilter = createAction<string>('phoneBook/changeFilter');
 
+const resetContacts = createAction('phoneBook/resetContacts');
+
+
 export default {
     addContactRequest,
     addContactSuccess,
@@ -29,4 +32,5 @@ export default {
     removeContactsError,
     //
     changeFilter,
+    resetContacts
 };

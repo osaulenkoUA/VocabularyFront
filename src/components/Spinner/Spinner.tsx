@@ -7,7 +7,7 @@ import s from './Spiner.module.scss';
 const Spinner: FC = () => {
     return (
         <div className={s.container}>
-            <Loader type="ThreeDots" color="#563fd6e6" height={100} width={100}/>
+            <Loader type="ThreeDots" color="#563fd6e6" height={50} width={100}/>
         </div>
     );
 }

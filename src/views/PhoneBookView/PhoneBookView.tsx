@@ -16,7 +16,7 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 
 import {addWord, content} from '../../types/types'
 
-import s from './App.module.css';
+import s from './VocabularyView.module.css';
 
 const PhoneBookView: FC = (): ReactElement => {
     const dispatch = useAppDispatch();
@@ -28,28 +28,38 @@ const PhoneBookView: FC = (): ReactElement => {
     const contacts: content[] = useSelector(phoneBookSelectors.getContacts);
 
     const list: content[] = useSelector(phoneBookSelectors.getConatctList).reverse();
-
     const newList: content[] = isMobile ? createArray(list, 10) : createArray(list, 20);
 
     useEffect(() => {
-        dispatch(phoneBookOperation.fetchContact());
+        if (contacts.length === 0) dispatch(phoneBookOperation.fetchContact());
     }, []);
+
 
     const isContacts: number = contacts.length;
     const isShowFindCOntact: boolean = isContacts >= 2;
     const isShowContactList: boolean = isContacts !== 0;
 
     const addWord = (data: addWord) => {
+        console.log(data.word);
         setIsExistWord(false);
         const isWord = contacts.find(el => el.word === data.word);
         !isWord ? dispatch(phoneBookOperation.addContact(data)) : setIsExistWord(true);
     }
+
     const filtred = (value: string) => dispatch(phoneBookAction.changeFilter(value));
     const removeWords = (id: string) => dispatch(phoneBookOperation.removeContact(id));
 
     return (
         <>
-            {isExistWord && <Notification/>}
+            <CSSTransition
+                in={isExistWord}
+                timeout={250}
+                unmountOnExit
+                classNames={s}
+            >
+                <Notification/>
+            </CSSTransition>
+
             <ContactForm addWord={addWord}/>
             <CSSTransition
                 in={isShowFindCOntact}

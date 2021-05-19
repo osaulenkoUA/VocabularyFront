@@ -16,7 +16,7 @@ const ContactItem: FC<PropTypes> = ({elem, removeWords}: PropTypes) => {
     return (
         <div key={word} className={s.list__item}>
             <span>{word}:</span>
-            <span>{translate}</span>
+            <span className={s.translate}>{translate}</span>
             <button
                 className={s.btn_delete}
                 type="button"
