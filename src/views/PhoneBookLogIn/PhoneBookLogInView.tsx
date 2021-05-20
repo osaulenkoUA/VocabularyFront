@@ -10,6 +10,10 @@ import {RootState, useAppDispatch} from "../../redux/store";
 import {logInUser} from "../../types/user";
 import Spinner from "../../components/Spinner/Spinner";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const PhoneBookLogInView = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,6 +30,7 @@ const PhoneBookLogInView = () => {
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
+       toast("Wow so easy!");
         const obj: logInUser = {
             email,
             password,
@@ -82,6 +87,7 @@ const PhoneBookLogInView = () => {
                     Sign up
                 </NavLink>
             </div>
+            <ToastContainer/>
         </section>
     );
 }

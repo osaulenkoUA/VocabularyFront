@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr ;
   align-items: center;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-template-columns: 1fr max-content;
 
   }

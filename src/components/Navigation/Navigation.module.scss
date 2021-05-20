@@ -3,7 +3,12 @@
   display: grid;
   grid-template-columns: repeat(3, max-content);
   text-transform: uppercase;
+  grid-row: 2/3;
   @media (min-width: 768px) {
   grid-column-gap: 25px;
 }
+  @media (min-width: 1024px) {
+    grid-row: 1/2;
+  }
+
 }
