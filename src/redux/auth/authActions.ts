@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import {userCurrent} from "../../types/user";
+import {userCurrent,Error} from "../../types/user";
 
  type payload={
    token:string;
@@ -11,6 +11,7 @@ type CurrentUser={
   id:string;
   name:string;
 }
+
 // --------------------------------------------------------------------------------------
 
 const registerRequest = createAction('auth/registerRequest');
@@ -19,7 +20,7 @@ const registerError = createAction<{}>('auth/registerError');
 
 const logInRequest = createAction('auth/logInRequest');
 const logInSuccess = createAction<payload>('auth/logInSuccess');
-const logInError = createAction<{}>('auth/logInError');
+const logInError = createAction<Error>('auth/logInError');
 
 const logOutRequest = createAction('auth/logOutRequest');
 const logOutSuccess = createAction('auth/logOutSuccess');

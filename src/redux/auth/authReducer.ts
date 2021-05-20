@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import {createReducer} from '@reduxjs/toolkit';
 import authActions from './authActions';
-import {userCurrent} from '../../types/user'
+import {userCurrent,Error} from '../../types/user'
 
 type PayloadAddUser = {
     payload: {
@@ -16,6 +16,14 @@ type PayloadGetUser = {
         name: string;
     }
 }
+type PayloadError = {
+    payload:Error
+}
+
+const initialStateError: Error = {
+    code: 0,
+    message: '',
+};
 
 const initialState: userCurrent = {
     name: '',
@@ -38,6 +46,11 @@ const token = createReducer('', builder => {
     builder.addCase(authActions.logOutSuccess, () => '');
 })
 
+const error=createReducer(initialStateError,builder => {
+    builder.addCase(authActions.logInError,(state:Error,{payload}:PayloadError)=>payload);
+    builder.addCase(authActions.registerError,(state:Error,{payload}:PayloadError)=>payload);
+})
+
 const loading = createReducer(false, builder => {
     builder.addCase(authActions.registerRequest, () => true);
     builder.addCase(authActions.registerSuccess, () => false);
@@ -45,8 +58,7 @@ const loading = createReducer(false, builder => {
     builder.addCase(authActions.logInRequest, () => true);
     builder.addCase(authActions.logInSuccess, () => false);
     builder.addCase(authActions.logInError, () => false);
-
 })
 
 
-export default combineReducers({user, token, loading});
+export default combineReducers({user, token, loading,error});

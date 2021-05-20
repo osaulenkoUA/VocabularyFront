@@ -6,8 +6,11 @@ export interface userCurrent {
 }
 
 export interface logInUser {
-
     email: string;
     password: string;
+}
 
+export interface Error{
+    code?:number;
+    message?:string;
 }

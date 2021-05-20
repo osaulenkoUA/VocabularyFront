@@ -10,6 +10,9 @@ import SvgEyeHide from '../../components/assets/SvgEyeHide/SvgEyeHide';
 import {RootState, useAppDispatch} from "../../redux/store";
 import {userCurrent} from "../../types/user";
 import Spinner from "../../components/Spinner/Spinner";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import authActions from "../../redux/auth/authActions";
 
 function PhoneBookRegister() {
     const [name, setName] = useState('');
@@ -21,8 +24,10 @@ function PhoneBookRegister() {
 
     const dispatch = useAppDispatch();
     const loading = useSelector((state: RootState) => state.auth.loading);
+    const error = useSelector((state: RootState) => state.auth.error);
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        setAvtiveBtn(true);
         e.preventDefault();
         const obj: userCurrent = {
             name,
@@ -30,7 +35,7 @@ function PhoneBookRegister() {
             password,
             passwordConfirm,
         };
-        dispatch(authOperation.register(obj));
+        await dispatch(authOperation.register(obj));
         setName('');
         setPassword('');
         setEmail('');
@@ -50,10 +55,17 @@ function PhoneBookRegister() {
         show === 'text' ? setShow('password') : setShow('text');
     }
 
+
+    if (error.code!==0){
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        error.code===401?toast('Authentication failed'):null;
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        error.code===400?toast('Some field is empty'):null;
+
+        dispatch(authActions.logInError({code:0,message:''}));
+    }
     return (
         <section className={s.container}>
-            {loading && <Spinner/>}
-
             <div className={s.wrapForm}>
                 <NavLink exact to="/" style={styles.link}>
                     Back to Sign in
@@ -105,7 +117,7 @@ function PhoneBookRegister() {
                         />
                     </label>
 
-                    {!loading&& <div className={s.wrapBTN}>
+                    {!loading && <div className={s.wrapBTN}>
                       <button
                         type="submit"
                         disabled={avtiveBtn}
@@ -122,6 +134,7 @@ function PhoneBookRegister() {
                     </button>
                 </form>
             </div>
+            <ToastContainer/>
         </section>
     );
 }

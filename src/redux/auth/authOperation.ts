@@ -45,7 +45,7 @@ const register = ({name, email, password, passwordConfirm}: userCurrent) => asyn
         token.set(data.token);
         dispatch(authActions.registerSuccess(data));
     } catch (error) {
-        dispatch(authActions.registerError(error));
+        dispatch(authActions.registerError(error?.response?.data));
     }
 };
 
@@ -59,8 +59,7 @@ const logIn = ({email, password}: logInUser) => async (dispatch: AppDispatch) =>
         token.set(data.token);
         dispatch(authActions.logInSuccess(data));
     } catch (error) {
-        dispatch(authActions.logInError(error));
-        console.dir(error);
+        dispatch(authActions.logInError(error.response.data));
     }
 };
 

@@ -10,8 +10,9 @@ import {RootState, useAppDispatch} from "../../redux/store";
 import {logInUser} from "../../types/user";
 import Spinner from "../../components/Spinner/Spinner";
 
-import { ToastContainer, toast } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import authActions from "../../redux/auth/authActions";
 
 
 const PhoneBookLogInView = () => {
@@ -20,6 +21,7 @@ const PhoneBookLogInView = () => {
     const dispatch = useAppDispatch();
     const loading = useSelector((state: RootState) => state.auth.loading);
     const [show, setShow] = useState('password');
+    const error = useSelector((state: RootState) => state.auth.error);
 
     function onHandleClick() {
         show === 'text' ? setShow('password') : setShow('text');
@@ -28,16 +30,27 @@ const PhoneBookLogInView = () => {
     const updateEmail = ({target}: ChangeEvent<HTMLInputElement>) => setEmail(target.value);
     const updatePassword = ({target}: ChangeEvent<HTMLInputElement>) => setPassword(target.value);
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-       toast("Wow so easy!");
         const obj: logInUser = {
             email,
             password,
         };
-        dispatch(authOperation.logIn(obj));
+        await dispatch(authOperation.logIn(obj));
+        console.log(error.code);
+
+
         setPassword('');
         setEmail('');
+    }
+
+
+    if (error.code!==0){
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        error.code===401?toast('Authentication failed'):null;
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        error.code===400?toast('Some field is empty'):null;
+        dispatch(authActions.logInError({code:0,message:''}));
     }
 
     return (
