@@ -21,7 +21,7 @@ export default [
     path: '/list',
     label: 'Add word',
     exact: true,
-    component: lazy(() => import('./views/PhoneBookView/PhoneBookView')),
+    component: lazy(() => import('./views/VocabularyView/VocabularyView')),
     privat: true,
     restricted: false,
   },

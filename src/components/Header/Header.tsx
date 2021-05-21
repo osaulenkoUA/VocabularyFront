@@ -5,31 +5,32 @@ import {useAppDispatch} from "../../redux/store";
 
 import authSelectors from '../../redux/auth/authSelectors';
 import authOperation from "../../redux/auth/authOperation";
-import phoneBookSelectors from "../../redux/PhoneBook/phoneBookSelectors";
+import vocabularySelectors from "../../redux/Vocabulary/vocabularySelectors";
 
 import Navigation from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 
 import s from "./Header.module.scss";
-import engImg from '../../images/eng1.png';
-import phoneBookActions from "../../redux/PhoneBook/phoneBookActions";
+import LogoDesktop from '../../images/LogoDesktop.png';
+
+import vocabularyActions from "../../redux/Vocabulary/vocabularyActions";
 
 const Header: FC = ():ReactElement => {
     const dispatch = useAppDispatch();
 
     const isAuth = useSelector(authSelectors.getToken);
     const name: string = useSelector(authSelectors.getName);
-    const length: number = useSelector(phoneBookSelectors.getContacts).length;
+    const length: number = useSelector(vocabularySelectors.getWords).length;
 
     const logOut = () => {
         dispatch(authOperation.logOut());
-        dispatch(phoneBookActions.resetContacts());
+        dispatch(vocabularyActions.resetWordList());
     }
 
     return (
         <div className={s.header}>
             <div className={s.wrapImg}>
-                <img src={engImg} alt='image header'/>
+                <img src={LogoDesktop} alt='image header'/>
             </div>
             <div className={s.content}>
                 { !!isAuth.length && (

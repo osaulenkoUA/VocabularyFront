@@ -5,8 +5,8 @@ import React, {FC, ReactElement} from 'react';
 import SwiperCore, {EffectFlip, Pagination} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {content} from '../../types/types'
-import ContactItem from '../ContactItem/ContactItem';
-import s from './ContactList.module.scss';
+import VocabularyItem from '../VocabularyItem/VocabularyItem';
+import s from './VocabularyList.module.scss';
 
 SwiperCore.use([Pagination, EffectFlip]);
 const pagination = {
@@ -22,7 +22,7 @@ type PropTypes = {
     children?: never;
 }
 
-const ContactList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
+const VocabularyList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
     console.log(newList[0]);
     return (
         <>
@@ -31,7 +31,7 @@ const ContactList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
                     <SwiperSlide key={idx}>
                         <div className={s.list}>
                             {el.map((elem: content) => (
-                                <ContactItem elem={elem} removeWords={removeWords}/>
+                                <VocabularyItem elem={elem} removeWords={removeWords}/>
                             ))}
                         </div>
                     </SwiperSlide>
@@ -42,9 +42,9 @@ const ContactList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
     );
 };
 
-export default ContactList;
+export default VocabularyList;
 
 
-ContactList.defaultProps = {
+VocabularyList.defaultProps = {
     newList: []
 };

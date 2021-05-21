@@ -8,14 +8,14 @@ import PublicRoute from './Routes/PublicRoute';
 import Section from './Section/Section';
 
 import authOperation from '../redux/auth/authOperation';
-import phoneBookSelectors from '../redux/PhoneBook/phoneBookSelectors';
+import vocabularySelectors from '../redux/Vocabulary/vocabularySelectors';
 import {useAppDispatch} from "../redux/store";
 import SpinnerVocabulary from "./SpinnerCircle/SpinnerVocabulary";
 
 const App:FC=():ReactElement=> {
 
   const dispatch = useAppDispatch();
-  const loading:boolean = useSelector(phoneBookSelectors.getLoading);
+  const loading:boolean = useSelector(vocabularySelectors.getLoading);
 
   useEffect(() => {
     dispatch(authOperation.getCurrentUser());

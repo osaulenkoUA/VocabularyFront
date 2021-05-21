@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FC, ReactElement} from 'react';
-import s from './FilterContacts.module.scss';
+import s from './FilterVocabulary.module.scss';
 
 
 type PropTypes= {
@@ -8,11 +8,11 @@ type PropTypes= {
 }
 
 
-const FilterContacts:FC<PropTypes>=({filtred}:PropTypes):ReactElement=> {
+const FilterVocabulary:FC<PropTypes>=({filtred}:PropTypes):ReactElement=> {
     const onChangeFilter=({target}:ChangeEvent<HTMLInputElement>)=>filtred(target.value);
 
     return (
-        <div className={s.findContact}>
+        <div className={s.findWord}>
             <p className={s.filterTitle}>Find word:</p>
             <input
                 type="text"
@@ -24,9 +24,9 @@ const FilterContacts:FC<PropTypes>=({filtred}:PropTypes):ReactElement=> {
     );
 }
 
-export default FilterContacts;
+export default FilterVocabulary;
 
-FilterContacts.defaultProps = {
+FilterVocabulary.defaultProps = {
     filtred: () => {
     }
 };

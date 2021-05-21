@@ -1,7 +1,7 @@
 import React, {FC, ReactElement} from 'react';
-import PhoneBookLogInView from '../../views/PhoneBookLogIn/PhoneBookLogInView';
+import LogInView from '../../views/LogInView/LogInView';
 
-const SignIn:FC=():ReactElement=><PhoneBookLogInView />;
+const SignIn:FC=():ReactElement=><LogInView />;
 
 
 export default SignIn;

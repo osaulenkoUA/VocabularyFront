@@ -14,7 +14,7 @@ import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import authActions from "../../redux/auth/authActions";
 
-function PhoneBookRegister() {
+const RegisterView=()=> {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -131,6 +131,7 @@ function PhoneBookRegister() {
 
                     <button type="button" onClick={onHandleClick} className={s.passShow__btn}>
                         {show === 'password' ? <SvgEye/> : <SvgEyeHide/>}
+                        Show Password
                     </button>
                 </form>
             </div>
@@ -139,4 +140,4 @@ function PhoneBookRegister() {
     );
 }
 
-export default PhoneBookRegister;
+export default RegisterView;

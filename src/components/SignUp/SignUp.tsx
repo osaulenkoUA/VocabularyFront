@@ -1,6 +1,6 @@
 import React, {FC, ReactElement} from 'react';
-import PhoneBookRegisterView from '../../views/PhoneBookRegisterView/PhoneBookRegisterView';
+import RegisterView from '../../views/RegisterView/RegisterView';
 
-const SignUp:FC=():ReactElement=><PhoneBookRegisterView />
+const SignUp:FC=():ReactElement=><RegisterView />
 
 export default SignUp;

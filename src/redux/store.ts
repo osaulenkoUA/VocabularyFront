@@ -4,7 +4,7 @@ import {persistReducer, persistStore} from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import {useDispatch} from 'react-redux';
 
-import phoneBookReducer from './PhoneBook/phoneBookReducer';
+import vocabularyReducer from './Vocabulary/vocabularyReducer';
 import authReducer from './auth/authReducer';
 
 const authPersistConfig = {
@@ -15,7 +15,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
     reducer: {
-        contacts: phoneBookReducer,
+        words: vocabularyReducer,
         auth: persistReducer(authPersistConfig, authReducer),
     },
 

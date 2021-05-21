@@ -1,9 +1,7 @@
 import React, {ChangeEvent, FC, FormEvent, ReactElement, useState} from 'react';
-import {CSSTransition} from 'react-transition-group';
 
-import Notification from '../Notification/Notification';
 
-import s from './ContactForm.module.scss';
+import s from './VocabularyForm.module.scss';
 
 interface data {
     word?: string;
@@ -11,12 +9,12 @@ interface data {
 }
 
 type PropTypes = {
-    addWord: ({word, translate}: data) => void;
+    postWord: ({word, translate}: data) => void;
     children?: never;
 }
 
 
-const ContactForm: FC<PropTypes> = ({addWord}: PropTypes): ReactElement => {
+const VocabularyForm: FC<PropTypes> = ({postWord}: PropTypes): ReactElement => {
     const [word, setWord] = useState<string>('');
     const [translate, setTranslate] = useState<string>('');
 
@@ -25,17 +23,13 @@ const ContactForm: FC<PropTypes> = ({addWord}: PropTypes): ReactElement => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        addWord({word, translate});
+        postWord({word, translate});
         setWord('');
         setTranslate('');
     }
 
     return (
         <>
-            <CSSTransition in={false} unmountOnExit classNames={s} timeout={350}>
-                <Notification/>
-            </CSSTransition>
-
             <form onSubmit={handleSubmit} className={s.form}>
                 <input
                     className={s.form__input}
@@ -62,10 +56,10 @@ const ContactForm: FC<PropTypes> = ({addWord}: PropTypes): ReactElement => {
     );
 }
 
-export default ContactForm;
+export default VocabularyForm;
 
 
-ContactForm.defaultProps = {
-    addWord: () => {
+VocabularyForm.defaultProps = {
+    postWord: () => {
     }
 };

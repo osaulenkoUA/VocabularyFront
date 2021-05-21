@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {useAppDispatch} from "../../redux/store";
 
-import phoneBookOperation from '../../redux/PhoneBook/phoneBookOperation';
-import phoneBookSelectors from '../../redux/PhoneBook/phoneBookSelectors';
+import vocabularyOperation from '../../redux/Vocabulary/vocabularyOperation';
+import vocabularySelectors from '../../redux/Vocabulary/vocabularySelectors';
 
 import {content} from "../../types/types";
 
@@ -14,12 +14,12 @@ function VocabularyLearn() {
     const [idx, setIdx] = useState<number>(0);
     const [istranslate, setIstranslate] = useState<boolean>(false);
 
-    const contacts: content[] = useSelector(phoneBookSelectors.getContacts);
-    const contLength: number = contacts.length;
+    const words: content[] = useSelector(vocabularySelectors.getWords);
+    const contLength: number = words.length;
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (contacts.length === 0) dispatch(phoneBookOperation.fetchContact());
+        if (words.length === 0) dispatch(vocabularyOperation.fetchWords());
     }, []);
 
     const random = (min: number, max: number): number => min + Math.random() * (max - min);
@@ -39,8 +39,8 @@ function VocabularyLearn() {
 
             <div className={s.check}>
                 <div className={s.content}>
-                    <h3 className={s.word}>{contacts[idx]?.word}</h3>
-                    <h3 className={s.translate}>{istranslate ? contacts[idx]?.translate : null}</h3>
+                    <h3 className={s.word}>{words[idx]?.word}</h3>
+                    <h3 className={s.translate}>{istranslate ? words[idx]?.translate : null}</h3>
                 </div>
             </div>
 

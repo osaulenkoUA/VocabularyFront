@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import authActions from "../../redux/auth/authActions";
 
 
-const PhoneBookLogInView = () => {
+const LogInView = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useAppDispatch();
@@ -92,6 +92,7 @@ const PhoneBookLogInView = () => {
 
                     <button type="button" onClick={onHandleClick} className={s.passShow__btn}>
                         {show === 'password' ? <SvgEye/> : <SvgEyeHide/>}
+                        showPassword
                     </button>
                 </form>
 
@@ -105,4 +106,4 @@ const PhoneBookLogInView = () => {
     );
 }
 
-export default PhoneBookLogInView;
+export default LogInView;

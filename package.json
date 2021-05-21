@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-09-phonebook",
+  "name": "Vocabulary",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,7 +37,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -p 2000 -d 300 -w db.json",
     "predeploy": "npm run build",
     "deploy": "netlify deploy -p",
     "typescript": "tsc"

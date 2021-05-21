@@ -1,4 +1,4 @@
-.findContact {
+.findWord {
   box-sizing: border-box;
   width: 70%;
   margin: 20px auto 20px auto;
@@ -16,6 +16,7 @@
   }
 }
 .filterInput {
+  padding-left: 10px;
   height: 34px;
   width: 100%;
   border: 1px solid rgb(156, 156, 156);
