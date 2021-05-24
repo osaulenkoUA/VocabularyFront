@@ -1,3 +1,4 @@
+// comment: can we use css modules instead of js styles? 
 const styles = {
   link: {
     display: 'inline-block',
