@@ -1,7 +1,7 @@
 import useBreakpoints from 'use-breakpoints-width';
 
-const screen = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const useScreen = () => {
+
   const {breakpoint} = useBreakpoints({
     breakpoints: {
       desktop: 1024,
@@ -13,4 +13,4 @@ const screen = () => {
   return breakpoint;
 }
 
-export default screen;
+export default useScreen;
