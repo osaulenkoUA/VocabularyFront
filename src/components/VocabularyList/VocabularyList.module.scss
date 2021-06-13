@@ -10,8 +10,9 @@
   display: grid;
   grid-template-columns: 1fr ;
   padding: 10px;
+  align-items: center;
   @media (min-width: 768px) {
-    width: 70%;
+    width: 80%;
 
     grid-auto-flow: column;
     grid-template-rows: repeat(10, 1fr);

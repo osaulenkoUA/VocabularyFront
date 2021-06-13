@@ -3,14 +3,9 @@
   width:inherit;
   height: inherit;
 }
-.svgDarkTheme {
-  fill: #ffffff;
-  width:inherit;
-  height: inherit;
-}
+
 .svgLightTheme:hover {
   fill: #ff000056;
+  transform: scale(0.8);
 }
-.svgDarkTheme:hover {
-  fill: #f30606;
-}
+

@@ -1,0 +1,72 @@
+.form {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: inherit;
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 10px;
+  justify-content: center;
+  column-gap: 5px;
+  align-content: center;
+  padding-bottom: 10px;
+padding-top: 10px;
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+    padding-top: 0;
+    grid-template-columns: 1fr 1fr max-content;
+  }
+  &__input {
+    height: 25px;
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 7px;
+  }
+}
+
+.form__input:focus {
+  outline: 1px solid rgb(50, 90, 223);
+}
+
+.form__btn {
+  padding: 3px 10px;
+  cursor: pointer;
+  background-color: #2f5794;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  font-weight: 600;
+  order: 1;
+  @media (min-width: 768px) {
+    order: 0;
+  }
+}
+.form__btn:focus {
+  border: none;
+  outline: none;
+}
+.form__btn:active {
+  background-color: rgb(80, 80, 80);
+}
+
+.enter {
+  opacity: 0.1;
+  transform: translateY(-100%);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms linear;
+}
+
+.exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.exitActive {
+  opacity: 0;
+
+  transform: translateX(-70%);
+  transition: all 350ms linear;
+}

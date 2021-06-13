@@ -12,7 +12,7 @@ type ActionRemove = {
 type ActionAdd = {
     payload: content;
 }
-
+const onUpdateWord=(state:content[],{payload}:ActionAdd):content[]=>[...state,payload];
 const onAddWord= (state: content[], {payload}: ActionAdd): content[] => [payload,...state];
 const fetchWords = (state: content[], {payload}: ActionFeth): Array<content> => payload;
 const onRemoveWord = (state: content[], {payload}: ActionRemove): content[] =>
@@ -25,6 +25,8 @@ const items = createReducer(initState, builder => {
     builder.addCase(vocabularyActions.fetchWordsSuccess, fetchWords);
     builder.addCase(vocabularyActions.removeWordSuccess, onRemoveWord);
     builder.addCase(vocabularyActions.resetWordList, ()=>initState);
+    builder.addCase(vocabularyActions.updateWordSuccess, onUpdateWord);
+
 
 });
 
