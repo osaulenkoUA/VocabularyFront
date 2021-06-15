@@ -14,12 +14,11 @@ type PropTypes = {
 };
 
 const VocabularyItem: FC<PropTypes> = ({elem, removeWords}: PropTypes) => {
-    const {word, translate, _id} = elem;
+    const {word, translate, _id,learned} = elem;
 
     const [isUpdate, setIsUpdate] = useState(false);
 
     const onUpdateWord = () => setIsUpdate(!isUpdate);
-
     return (
         <div key={_id}>
             {!isUpdate && (
@@ -27,8 +26,8 @@ const VocabularyItem: FC<PropTypes> = ({elem, removeWords}: PropTypes) => {
                     <button className={s.btn_edit} type="button" onClick={onUpdateWord}>
                         <IconEdit/>
                     </button>
-                    <span>{word}:</span>
-                    <span className={s.translate}>{translate}</span>
+                    <span style={learned?{color:"red"}:{color:"#000000"}}>{word}:</span>
+                    <span style={learned?{color:"red"}:{color:"#000000"}} className={s.translate}>{translate}</span>
 
                     <button
                         className={s.btn_delete}

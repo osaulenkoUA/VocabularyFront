@@ -23,7 +23,6 @@ type PropTypes = {
 }
 
 const VocabularyList: FC<PropTypes> = ({removeWords, newList}: PropTypes) => {
-    console.log(newList[0]);
     return (
         <>
             <Swiper effect={'flip'} grabCursor={true} pagination={pagination} spaceBetween={5} slidesPerView={1}>

@@ -15,7 +15,7 @@ const getWordList = createSelector(
     [getWords, getFilter],
     (words: content[], filter: string): content[] => {
        return words.filter(({word, translate}:addWord) =>
-            word?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || translate?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
+             word?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || translate?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
         );
     },
 );

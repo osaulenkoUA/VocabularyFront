@@ -27,7 +27,7 @@ const VocabularyFormUpdate: FC<PropTypes> = ({uword, utranslate, id, onUpdateWor
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         await dispatch(vocabularyOperation.updateWord(id, {word, translate}));
-        await dispatch(vocabularyOperation.fetchWords());
+        // await dispatch(vocabularyOperation.fetchWords());
         onUpdateWord();
 
     }
