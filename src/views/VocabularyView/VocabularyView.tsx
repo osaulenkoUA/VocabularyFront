@@ -53,7 +53,7 @@ const VocabularyView: FC = (): ReactElement => {
     return (
         <>
             <ToastContainer/>
-            <VocabularyForm postWord={postWord}/>
+            <VocabularyForm  postWord={postWord}/>
             <CSSTransition
                 in={isShowFindWords}
                 timeout={250}

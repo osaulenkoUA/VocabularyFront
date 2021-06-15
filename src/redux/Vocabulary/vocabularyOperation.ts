@@ -42,8 +42,19 @@ const removeWord = (id: string) => async (dispatch: AppDispatch) => {
     }
 };
 
+const updateWord = (id: string,newFields:addWord) => async (dispatch: AppDispatch) => {
+    dispatch(vocabularyActions.updateWordRequest());
+    try {
+        const {data}: addData = await  axios.patch(`/vocabulary/update/${id}`,newFields);
+        dispatch(vocabularyActions.updateWordSuccess(data));
+    } catch (error) {
+        dispatch(vocabularyActions.updateWordError(error));
+    }
+};
+
 export default {
     postWord,
     fetchWords,
     removeWord,
+    updateWord
 };

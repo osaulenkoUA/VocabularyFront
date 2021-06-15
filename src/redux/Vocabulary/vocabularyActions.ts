@@ -13,6 +13,10 @@ const removeWordRequest = createAction('vocabulary/removeRequest');
 const removeWordSuccess = createAction<string>('vocabulary/removeSuccess');
 const removeWordError = createAction<{}>('vocabulary/removeError');
 
+const updateWordRequest = createAction('vocabulary/updateRequest');
+const updateWordSuccess = createAction<content>('vocabulary/updateSuccess');
+const updateWordError = createAction<{}>('vocabulary/updateError');
+
 const changeFilter = createAction<string>('vocabulary/changeFilter');
 
 const resetWordList = createAction('vocabulary/resetWordList');
@@ -30,6 +34,10 @@ export default {
     removeWordRequest,
     removeWordSuccess,
     removeWordError,
+    //
+    updateWordRequest,
+    updateWordSuccess,
+    updateWordError,
     //
     changeFilter,
     resetWordList
